@@ -1,0 +1,16 @@
+{
+  "name": "note-review-push-server",
+  "version": "1.0.0",
+  "description": "ノート復習PWA用 Web Push通知サーバー",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "web-push": "^3.6.7"
+  }
+}
