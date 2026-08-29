@@ -136,7 +136,7 @@ app.post("/test", (req, res) => {
       return res.status(400).json({ error: "subscription情報がありません" });
     }
     sendPush(subscription, {
-      title: title || "ノート復習",
+      title: title || "Engram",
       body: body || "テスト通知です"
     })
       .then(() => res.json({ ok: true }))
@@ -158,12 +158,12 @@ function normalizeSchedule(schedule) {
     .filter((item) => item && typeof item.time === "number" && item.time > now - 60000)
     .map((item) => ({
       time: item.time,
-      title: String(item.title || "ノート復習"),
+      title: String(item.title || "Engram"),
       body: String(item.body || "今日の復習を確認しましょう。"),
       url: String(item.url || "./"),
       sent: false
     }))
-    .filter((item) => item.time < now + 30 * 24 * 3600 * 1000) // 30日以内のみ
+    .filter((item) => item.time < now + 35 * 24 * 3600 * 1000) // 35日以内のみ（アプリ側は30日先まで生成するため余裕を持たせる）
     .sort((a, b) => a.time - b.time);
 }
 
