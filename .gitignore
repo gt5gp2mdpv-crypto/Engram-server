@@ -1,0 +1,4 @@
+# 実行時に生成される状態ファイル（バージョン管理対象外）
+data.json
+.vapid.json
+node_modules/
